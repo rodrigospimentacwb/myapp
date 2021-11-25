@@ -1,4 +1,4 @@
-FROM arm64v8/openjdk:11
+FROM bellsoft/liberica-openjdk-alpine-musl:11
 
 WORKDIR /app
 
