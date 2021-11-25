@@ -14,5 +14,6 @@ jobs:
         uses: docker/build-push-action@v1.1.0
         with: 
           username: rodrigospimenta
-          password: {{ secrets.DOCKER_PASSWORD }}
-    
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: rodrigospimenta/myapp
+          tags: ${{ github.sha }}, latest
