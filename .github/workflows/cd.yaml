@@ -64,7 +64,7 @@ jobs:
           git commit -am "change image tag"
 
       - name: push own repository
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.SSH_CD }}
 
