@@ -59,11 +59,11 @@ jobs:
 
       - name: commit own repository
         run: |
+          git remote set-url origin git@github.com:rodrigospimentacwb/myapp.git
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
           git commit -am "change image tag"
           git branch -M main
-          git remote set-url origin git@github.com:rodrigospimentacwb/myapp.git
 
       - name: push own repository
         uses: ad-m/github-push-action@v0.6.0
