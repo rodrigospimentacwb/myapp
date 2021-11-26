@@ -7,6 +7,6 @@ resources:
 namespace: myapp
 
 images:
-  - name: myapp
-    newName: myapp
-    newTag: v1
+- name: myapp
+  newName: myapp
+  newTag: v1
