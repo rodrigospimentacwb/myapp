@@ -59,6 +59,7 @@ jobs:
 
       - name: commit own repository
         run: |
+          git clone https://github.com/rodrigospimentacwb/myapp.git
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
           git add .
@@ -69,6 +70,7 @@ jobs:
         with:
           github_token: ${{ secrets.GIT_ACTIONS_TOKEN }}
           branch: ${{ github.ref }}
-          force: true
+          directory: myapp
+          repository: 'rodrigospimenta/myapp'
 
 
