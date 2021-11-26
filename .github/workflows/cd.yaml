@@ -34,3 +34,36 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: rodrigospimenta/myapp
           tags: ${{ github.sha }}, latest
+  deploy:
+    name: Deploy
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        packages: write
+      needs: build
+      steps:
+
+        - name: Checkout Git Code
+          uses: actions/checkout@v2
+
+        - name: kustomize
+          uses: imranismail/setup-kustomize@v1
+          with:
+            kustomize_version: v3.6.1
+
+        - name: update k8s
+          run: |
+            cd k8s
+            kustomize edit set image myapp=rodrigospimenta/myapp:${{ github.sha }}
+            cat kustomization.yaml
+
+        - name: commit own repository
+          run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "Deploy Action"
+            git commit -am "change image tag"
+
+        - name: push own repository
+          uses: ad-m/github-push-action@master
+
+
