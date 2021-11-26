@@ -9,4 +9,4 @@ namespace: myapp
 images:
 - name: myapp
   newName: rodrigospimenta/myapp
-  newTag: f2cc523050f83e6ac82bfe5723971f31bee226af
+  newTag: 017a797c8dfd4a79b75cf85479689f8862c783a8
