@@ -5,3 +5,8 @@ resources:
 - service.yaml
 
 namespace: myapp
+
+images:
+  - name: myapp
+    newName: myapp
+    newTag: v1
