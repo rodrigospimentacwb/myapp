@@ -57,6 +57,12 @@ jobs:
           kustomize edit set image myapp=rodrigospimenta/myapp:${{ github.sha }}
           cat kustomization.yaml
 
+      - name: Install SSH Key
+          uses: shimataro/ssh-key-action@v2
+          with:
+            key: ${{ secrets.SSH_CD }}
+            known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+
       - name: commit own repository
         run: |
           git config --local user.email "action@github.com"
