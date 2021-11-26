@@ -66,6 +66,6 @@ jobs:
       - name: push own repository
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.SSH_CD }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
