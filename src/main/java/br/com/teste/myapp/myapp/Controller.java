@@ -17,7 +17,7 @@ public class Controller {
 
     @GetMapping
     public String getResponse() {
-        return String.format("HELLO!!!! POD_NAME: %s NAMESPACE: %s POD_IP: %s", podName, nameSpace, podIP);
+        return String.format("HELLO BOB !!!! POD_NAME: %s NAMESPACE: %s POD_IP: %s", podName, nameSpace, podIP);
 //        return "Batatinha frita 123";
     }
 }
