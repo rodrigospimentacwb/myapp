@@ -59,11 +59,9 @@ jobs:
 
       - name: commit own repository
         run: |
-          git clone https://github.com/rodrigospimentacwb/myapp.git
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
-          git add .
-          git commit -m "change image tag"
+          git commit -am "change image tag"
 
       - name: push own repository
         uses: ad-m/github-push-action@master
